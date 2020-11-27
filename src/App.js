@@ -18,10 +18,10 @@ function App() {
           Learn React
         </a> */}
         Welcome to mattpaustin.com
+        <div>
+          *** site under construction ***
+        </div>
       </header>
-      <p>
-        *** site under construction ***
-      </p>
     </div>
   );
 }
