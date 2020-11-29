@@ -68,21 +68,24 @@ const useStyles = makeStyles((theme) => ({
 
 const cards = [
     {
-        heading: 'My (retired (for now)) blog about REI',
-        copy: 'This the the first card',
-        image: '/example_image',
+        heading: 'House Hack Knack',
+        copy: 'My (retired (for now)) blog about REI',
+        image: 'https://source.unsplash.com/photos/A3DPhhAL6Zg',
+        imageTitle: '',
         url: 'https://www.househackknack.com',
     },
     {
         heading: 'Go Badgers',
         copy: 'Another disappointing football season...',
-        image: '/example_image2',
+        image: 'https://source.unsplash.com/photos/A3DPhhAL6Zg',
+        imageTitle: '',
         url: 'https://www.uwbadgers.com',
     },
     {
         heading: 'Soothe your soul',
         copy: 'What\'s your favorite Chris Stapleton song?',
-        image: '/example_image3',
+        image: 'https://source.unsplash.com/photos/A3DPhhAL6Zg',
+        imageTitle: '',
         url: 'https://www.chrisstapleton.com',
     },
 ];
@@ -139,8 +142,8 @@ export default function Album() {
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
-                    title="Image title"
+                    image={card.image}
+                    title={card.imageTitle}
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
