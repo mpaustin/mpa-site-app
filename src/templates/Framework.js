@@ -13,6 +13,8 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
+import Avatar from '@material-ui/core/Avatar';
+import headshot from '../images/headshot.jpg';
 
 function Copyright() {
   return (
@@ -64,6 +66,12 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#49b5eb',
     padding: theme.spacing(6),
   },
+  headshot: {
+    height: theme.spacing(20),
+    width: theme.spacing(20),
+    margin: 'auto',
+    marginBottom: '30px',
+  },
 }));
 
 const cards = [
@@ -103,39 +111,38 @@ export default function Album() {
       <AppBar position="relative" className={classes.appBar} >
         <Toolbar>
           {/* <CameraIcon className={classes.icon} /> */}
-          <Typography variant="h6" color="inherit" noWrap>
+          {/* <Typography variant="h6" color="inherit" noWrap>
             mattpaustin
-          </Typography>
+          </Typography> */}
         </Toolbar>
       </AppBar>
       <main>
-        {/* Hero unit */}
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
+            <Avatar src={headshot} alt='headshot' className={classes.headshot} />
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
               Matt Austin
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              BS Engineering, University of Wisconsin-Madison
+              BSc, University of Wisconsin-Madison
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button variant="contained" color='inherit' className={classes.heroButtonsPrimary} >
-                    Do nothing
+                  <Button variant="contained" color='inherit' className={classes.heroButtonsPrimary} onClick={() => openUrl('https://www.linkedin.com/in/mattpaustin')}>
+                    LinkedIn
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button variant="outlined" color='inherit' >
-                    Still do nothing
+                  <Button variant="outlined" color='inherit' onClick={() => openUrl('https://www.github.com/mpaustin13')}>
+                    GitHub
                   </Button>
                 </Grid>
               </Grid>
             </div>
           </Container>
         </div>
-        <Container className={classes.cardGrid} maxWidth="md">
-          {/* End hero unit */}
+        {/* <Container className={classes.cardGrid} maxWidth="md">
           <Grid container spacing={4}>
             {cards.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
@@ -162,16 +169,14 @@ export default function Album() {
               </Grid>
             ))}
           </Grid>
-        </Container>
+        </Container> */}
       </main>
-      {/* Footer */}
       <footer className={classes.footer}>
         <Typography variant="h6" align="center" gutterBottom>
           Thanks for visiting!
         </Typography>
         <Copyright />
       </footer>
-      {/* End footer */}
     </React.Fragment>
   );
 }
