@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import Button from '@material-ui/core/Button';
+import Framework from './templates/Framework';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         Welcome to mattpaustin.com
         <div>
           *** site under construction ***
@@ -15,7 +16,8 @@ function App() {
             Don't click this button
           </Button>
         </div>
-      </header>
+      </header> */}
+      <Framework />
     </div>
   );
 }
