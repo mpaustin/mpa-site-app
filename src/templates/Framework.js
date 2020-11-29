@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6),
+    padding: theme.spacing(15, 0, 15),
   },
   heroButtons: {
     marginTop: theme.spacing(4),
@@ -65,6 +65,7 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     backgroundColor: '#49b5eb',
     padding: theme.spacing(6),
+    // position: 'absolute',
   },
   headshot: {
     height: theme.spacing(20),
@@ -172,9 +173,9 @@ export default function Album() {
         </Container> */}
       </main>
       <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
+        {/* <Typography variant="h6" align="center" gutterBottom>
           Thanks for visiting!
-        </Typography>
+        </Typography> */}
         <Copyright />
       </footer>
     </React.Fragment>
