@@ -15,6 +15,10 @@ import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import Avatar from '@material-ui/core/Avatar';
 import headshot from '../images/headshot.jpg';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import IconButton from '@material-ui/core/IconButton';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import InstagramIcon from '@material-ui/icons/Instagram';
 
 function Copyright() {
   return (
@@ -34,18 +38,19 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   appBar: {
-    backgroundColor: '#49b5eb',
+    backgroundColor: '#808080',
   },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(15, 0, 15),
+    fontFamily: 'EB Garamond,serif',
   },
   heroButtons: {
     marginTop: theme.spacing(4),
     // color: '#49b5eb',
   },
   heroButtonsPrimary: {
-    backgroundColor: '#49b5eb',
+    backgroundColor: '#808080',
   },
   cardGrid: {
     paddingTop: theme.spacing(8),
@@ -63,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   footer: {
-    backgroundColor: '#49b5eb',
+    backgroundColor: '#808080',
     padding: theme.spacing(6),
     // position: 'absolute',
   },
@@ -72,6 +77,12 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(20),
     margin: 'auto',
     marginBottom: '30px',
+  },
+  title: {
+    fontFamily: 'EB Garamond, serif',
+  },
+  subtitle: {
+
   },
 }));
 
@@ -121,23 +132,28 @@ export default function Album() {
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Avatar src={headshot} alt='headshot' className={classes.headshot} />
-            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom className={classes.title}>
               Matt Austin
             </Typography>
-            <Typography variant="h5" align="center" color="textSecondary" paragraph>
+            <Typography variant="h5" align="center" color="textSecondary" paragraph className={classes.title}>
               BSc, University of Wisconsin-Madison
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button variant="contained" color='inherit' className={classes.heroButtonsPrimary} onClick={() => openUrl('https://www.linkedin.com/in/mattpaustin')}>
-                    LinkedIn
-                  </Button>
+                  <IconButton variant="contained" color='inherit' onClick={() => openUrl('https://www.linkedin.com/in/mattpaustin')}>
+                    <LinkedInIcon />
+                  </IconButton>
                 </Grid>
                 <Grid item>
-                  <Button variant="outlined" color='inherit' onClick={() => openUrl('https://www.github.com/mpaustin13')}>
-                    GitHub
-                  </Button>
+                  <IconButton variant="outlined" color='inherit' onClick={() => openUrl('https://www.github.com/mpaustin13')}>
+                    <GitHubIcon />
+                  </IconButton>
+                </Grid>
+                <Grid item>
+                  <IconButton variant="contained" color='inherit' onClick={() => openUrl('https://www.instagram.com/matt.p.austin')}>
+                    <InstagramIcon />
+                  </IconButton>
                 </Grid>
               </Grid>
             </div>
