@@ -15,6 +15,7 @@ import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import Avatar from '@material-ui/core/Avatar';
 import headshot from '../images/headshot.jpg';
+import MotionW from '../images/motion-w.png';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import IconButton from '@material-ui/core/IconButton';
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -82,7 +83,14 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'EB Garamond, serif',
   },
   subtitle: {
-
+    fontFamily: 'EB Garamond, serif',
+    cursor: 'pointer',
+  },
+  motionW: {
+    height: theme.spacing(8),
+    width: theme.spacing(8),
+    margin: 'auto',
+    marginBottom: '30px',
   },
 }));
 
@@ -135,9 +143,14 @@ export default function Album() {
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom className={classes.title}>
               Matt Austin
             </Typography>
-            <Typography variant="h5" align="center" color="textSecondary" paragraph className={classes.title}>
-              BSc, University of Wisconsin-Madison
-            </Typography>
+            <div>
+                <Avatar src={MotionW} alt='motionW' variant='square' className={classes.motionW} />
+                <Typography variant="h5" align="center" color="textSecondary" paragraph className={classes.subtitle}>
+                    <Link color='inherit' onClick={() => openUrl('https://www.engr.wisc.edu')}>
+                        BSc, University of Wisconsin-Madison
+                    </Link>
+                </Typography>
+            </div>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
