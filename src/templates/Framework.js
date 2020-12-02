@@ -49,25 +49,9 @@ const useStyles = makeStyles((theme) => ({
   heroButtonsPrimary: {
     backgroundColor: '#808080',
   },
-  cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-  },
-  card: {
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  cardMedia: {
-    paddingTop: '56.25%', // 16:9
-  },
-  cardContent: {
-    flexGrow: 1,
-  },
   footer: {
     backgroundColor: '#808080',
     padding: theme.spacing(6),
-    // position: 'absolute',
   },
   headshot: {
     height: theme.spacing(20),
@@ -82,13 +66,12 @@ const useStyles = makeStyles((theme) => ({
   },
   subtitle: {
     fontFamily: 'EB Garamond, serif',
-    // cursor: 'pointer',
   },
   motionW: {
     height: theme.spacing(4),
     width: theme.spacing(4),
-    // margin: 'auto',
     marginRight: '15px',
+    cursor: 'pointer',
   },
 }));
 
@@ -113,7 +96,10 @@ export default function Album() {
               Matt Austin
             </Typography>
             <Box display='flex' flexDirection='row' justifyContent='center'>
-                <Avatar src={MotionW} alt='motionW' variant='square' className={classes.motionW} />
+                <Link color='inherit' onClick={() => openUrl('https://www.engr.wisc.edu')}>
+                    <Avatar src={MotionW} alt='motionW' variant='square' className={classes.motionW} />
+                </Link>
+                
                 <Typography variant="h6" align="center" color="textSecondary" paragraph className={classes.subtitle}>
                     {/* <Link color='inherit' onClick={() => openUrl('https://www.engr.wisc.edu')}>
                         BSc, University of Wisconsin-Madison
