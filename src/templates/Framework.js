@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(15, 0, 15),
     fontFamily: 'EB Garamond,serif',
-    height: '85vh',
+    height: '75vh',
   },
   heroButtons: {
     // marginTop: theme.spacing(4),
