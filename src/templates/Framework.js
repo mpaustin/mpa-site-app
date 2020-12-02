@@ -31,28 +31,17 @@ function Copyright() {
 }
 
 const useStyles = makeStyles((theme) => ({
-  icon: {
-    marginRight: theme.spacing(2),
-  },
   appBar: {
     backgroundColor: '#808080',
   },
   heroContent: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(15, 0, 15),
+    padding: '10% 0 10%',
     fontFamily: 'EB Garamond,serif',
-    height: '80vh',
-  },
-  heroButtons: {
-    // marginTop: theme.spacing(4),
-    // color: '#49b5eb',
-  },
-  heroButtonsPrimary: {
-    backgroundColor: '#808080',
   },
   footer: {
     backgroundColor: '#808080',
     padding: theme.spacing(6),
+    height: '1.5rem',
   },
   headshot: {
     height: theme.spacing(20),
@@ -62,10 +51,7 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid white',
     boxShadow: '0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)',
   },
-  title: {
-    fontFamily: 'EB Garamond, serif',
-  },
-  subtitle: {
+  font: {
     fontFamily: 'EB Garamond, serif',
   },
   motionW: {
@@ -74,6 +60,10 @@ const useStyles = makeStyles((theme) => ({
     marginRight: '15px',
     cursor: 'pointer',
   },
+  main: {
+    backgroundColor: theme.palette.background.paper,
+    minHeight: 'calc(100vh - 1.5rem)',
+  }
 }));
 
 const openUrl = (url) => {
@@ -87,13 +77,14 @@ export default function Album() {
     <React.Fragment>
       <CssBaseline />
       <AppBar position="relative" className={classes.appBar} >
-        <Toolbar/>
+        <Toolbar>
+        </Toolbar>
       </AppBar>
-      <main>
+      <main className={classes.main}>
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Avatar src={headshot} alt='headshot' className={classes.headshot} />
-            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom className={classes.title}>
+            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom className={classes.font}>
               Matt Austin
             </Typography>
             <Box display='flex' flexDirection='row' justifyContent='center'>
@@ -101,14 +92,14 @@ export default function Album() {
                     <Avatar src={MotionW} alt='motionW' variant='square' className={classes.motionW} />
                 </Link>
                 
-                <Typography variant="h6" align="center" color="textSecondary" paragraph className={classes.subtitle}>
+                <Typography variant="h6" align="center" color="textSecondary" paragraph className={classes.font}>
                     {/* <Link color='inherit' onClick={() => openUrl('https://www.engr.wisc.edu')}>
                         BSc, University of Wisconsin-Madison
                     </Link> */}
                     Software Engineer || Exercise Enthusiast || Avid Reader
                 </Typography>
             </Box>
-            <div className={classes.heroButtons}>
+            <div>
               <Grid container spacing={2} justify="center">
                 <Grid item>
                   <IconButton variant="contained" color='inherit' onClick={() => openUrl('https://www.linkedin.com/in/mattpaustin')}>
