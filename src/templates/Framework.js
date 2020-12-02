@@ -63,6 +63,10 @@ const useStyles = makeStyles((theme) => ({
   main: {
     backgroundColor: theme.palette.background.paper,
     minHeight: 'calc(100vh - 1.5rem)',
+  },
+  link: {
+      color: 'inherit',
+      cursor: 'pointer',
   }
 }));
 
@@ -96,7 +100,9 @@ export default function Album() {
                     {/* <Link color='inherit' onClick={() => openUrl('https://www.engr.wisc.edu')}>
                         BSc, University of Wisconsin-Madison
                     </Link> */}
-                    Software Engineer || Exercise Enthusiast || Avid Reader
+                    Software Engineer ||&nbsp; 
+                    <Link className={classes.link} onClick={() => openUrl('https://www.strava.com/athletes/22456556')}>Exercise Enthusiast</Link> ||&nbsp;
+                    <Link className={classes.link} onClick={() => openUrl('https://www.goodreads.com/review/list/70497021-matt?ref=nav_mybooks')}>Avid Reader</Link>
                 </Typography>
             </Box>
             <div>
