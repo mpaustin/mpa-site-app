@@ -129,7 +129,7 @@ export default function Album() {
                   </IconButton>
                 </Grid>
                 <Grid item>
-                  <IconButton variant="outlined" color='inherit' onClick={() => openUrl('https://www.github.com/mpaustin13')}>
+                  <IconButton variant="outlined" color='inherit' onClick={() => openUrl('https://www.github.com/mpaustin')}>
                     <GitHubIcon />
                   </IconButton>
                 </Grid>
