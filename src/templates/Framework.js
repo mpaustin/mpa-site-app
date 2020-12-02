@@ -17,8 +17,9 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import Box from '@material-ui/core/Box';
 
 function Copyright() {
+    const classes = useStyles();
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
+    <Typography variant="body2" color="textSecondary" align="center" className={classes.title}>
       {'Copyright © '}
       <Link color="inherit" href="https://mattpaustin.com/">
         mattpaustin.com
@@ -73,13 +74,15 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(20),
     margin: 'auto',
     marginBottom: '30px',
+    border: '1px solid white',
+    boxShadow: '0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)',
   },
   title: {
     fontFamily: 'EB Garamond, serif',
   },
   subtitle: {
     fontFamily: 'EB Garamond, serif',
-    cursor: 'pointer',
+    // cursor: 'pointer',
   },
   motionW: {
     height: theme.spacing(4),
@@ -111,10 +114,11 @@ export default function Album() {
             </Typography>
             <Box display='flex' flexDirection='row' justifyContent='center'>
                 <Avatar src={MotionW} alt='motionW' variant='square' className={classes.motionW} />
-                <Typography variant="h5" align="center" color="textSecondary" paragraph className={classes.subtitle}>
-                    <Link color='inherit' onClick={() => openUrl('https://www.engr.wisc.edu')}>
+                <Typography variant="h6" align="center" color="textSecondary" paragraph className={classes.subtitle}>
+                    {/* <Link color='inherit' onClick={() => openUrl('https://www.engr.wisc.edu')}>
                         BSc, University of Wisconsin-Madison
-                    </Link>
+                    </Link> */}
+                    Software Engineer || Exercise Enthusiast || Avid Reader
                 </Typography>
             </Box>
             <div className={classes.heroButtons}>
