@@ -118,7 +118,7 @@ export default function Album() {
                     {/* <Link color='inherit' onClick={() => openUrl('https://www.engr.wisc.edu')}>
                         BSc, University of Wisconsin-Madison
                     </Link> */}
-                    Software Engineer || Exercise Enthusiast || Avid Reader
+                    Software Engineer || Exercise Enthusiast || Avid Reader || test
                 </Typography>
             </Box>
             <div className={classes.heroButtons}>
