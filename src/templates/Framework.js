@@ -95,11 +95,7 @@ export default function Album() {
                 <Link color='inherit' onClick={() => openUrl('https://www.engr.wisc.edu')}>
                     <Avatar src={MotionW} alt='motionW' variant='square' className={classes.motionW} />
                 </Link>
-                
                 <Typography variant="h6" align="center" color="textSecondary" paragraph className={classes.font}>
-                    {/* <Link color='inherit' onClick={() => openUrl('https://www.engr.wisc.edu')}>
-                        BSc, University of Wisconsin-Madison
-                    </Link> */}
                     Software Engineer ||&nbsp; 
                     <Link className={classes.link} onClick={() => openUrl('https://www.strava.com/athletes/22456556')}>Exercise Enthusiast</Link> ||&nbsp;
                     <Link className={classes.link} onClick={() => openUrl('https://www.goodreads.com/review/list/70497021-matt?ref=nav_mybooks')}>Avid Reader</Link>
@@ -121,6 +117,15 @@ export default function Album() {
                   <IconButton variant="contained" color='inherit' onClick={() => openUrl('https://www.instagram.com/matt.p.austin')}>
                     <InstagramIcon />
                   </IconButton>
+                </Grid>
+              </Grid>
+            </div>
+            <div>
+              <Grid container spacing={2} justify='center'>
+                <Grid item>
+                  <Typography variant="h6" align="center" color="textSecondary" paragraph className={classes.font}>
+                    <Link className={classes.link} onClick={() => openUrl('http://trackyourworkouts.io')}>trackyourworkouts.io</Link>
+                  </Typography>
                 </Grid>
               </Grid>
             </div>
