@@ -127,6 +127,12 @@ export default function Album() {
                     <Link className={classes.link} onClick={() => openUrl('http://trackyourworkouts.io')}>trackyourworkouts.io</Link>
                   </Typography>
                 </Grid>
+                <div/>
+                <Grid item>
+                  <Typography variant="h6" align="center" color="textSecondary" paragraph className={classes.font}>
+                    <Link className={classes.link} onClick={() => openUrl('http://househackknack.com')}>househackknack.com</Link>
+                  </Typography>
+                </Grid>
               </Grid>
             </div>
           </Container>
