@@ -96,9 +96,10 @@ export default function Album() {
                     <Avatar src={MotionW} alt='motionW' variant='square' className={classes.motionW} />
                 </Link>
                 <Typography variant="h6" align="center" color="textSecondary" paragraph className={classes.font}>
-                    Software Engineer ||&nbsp; 
+                    Software Engineer 
+                    {/* ||&nbsp; 
                     <Link className={classes.link} onClick={() => openUrl('https://www.strava.com/athletes/22456556')}>Exercise Enthusiast</Link> ||&nbsp;
-                    <Link className={classes.link} onClick={() => openUrl('https://www.goodreads.com/review/list/70497021-matt?ref=nav_mybooks')}>Avid Reader</Link>
+                    <Link className={classes.link} onClick={() => openUrl('https://www.goodreads.com/review/list/70497021-matt?ref=nav_mybooks')}>Avid Reader</Link> */}
                 </Typography>
             </Box>
             <div>
@@ -120,7 +121,7 @@ export default function Album() {
                 </Grid>
               </Grid>
             </div>
-            <div>
+            {/* <div>
               <Grid container spacing={2} justify='center'>
                 <Grid item>
                   <Typography variant="h6" align="center" color="textSecondary" paragraph className={classes.font}>
@@ -134,7 +135,7 @@ export default function Album() {
                   </Typography>
                 </Grid>
               </Grid>
-            </div>
+            </div> */}
           </Container>
         </div>
       </main>
