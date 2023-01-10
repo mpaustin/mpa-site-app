@@ -1,20 +1,20 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Grid from '@material-ui/core/Grid';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
-import Avatar from '@material-ui/core/Avatar';
+import AppBar from '@mui/material/AppBar';
+import CssBaseline from '@mui/material/CssBaseline';
+import Grid from '@mui/material/Grid';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import { makeStyles } from '@mui/styles';
+import Container from '@mui/material/Container';
+import Link from '@mui/material/Link';
+import Avatar from '@mui/material/Avatar';
 import headshot from '../images/headshot.jpg';
 import MotionW from '../images/motion-w.png';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import IconButton from '@material-ui/core/IconButton';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import Box from '@material-ui/core/Box';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import IconButton from '@mui/material/IconButton';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import Box from '@mui/material/Box';
 
 function Copyright() {
     const classes = useStyles();
@@ -40,12 +40,12 @@ const useStyles = makeStyles((theme) => ({
   },
   footer: {
     backgroundColor: '#808080',
-    padding: theme.spacing(6),
+    padding: '6',
     height: '1.5rem',
   },
   headshot: {
-    height: theme.spacing(20),
-    width: theme.spacing(20),
+    height: '20px',
+    width: '20px',
     margin: 'auto',
     marginBottom: '30px',
     border: '1px solid white',
@@ -55,13 +55,13 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'EB Garamond, serif',
   },
   motionW: {
-    height: theme.spacing(4),
-    width: theme.spacing(4),
+    height: '4',
+    width: '4',
     marginRight: '15px',
     cursor: 'pointer',
   },
   main: {
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: '#FFFFFF',
     minHeight: 'calc(100vh - 1.5rem)',
   },
   link: {
@@ -81,8 +81,7 @@ export default function Album() {
     <React.Fragment>
       <CssBaseline />
       <AppBar position="relative" className={classes.appBar} >
-        <Toolbar>
-        </Toolbar>
+        <Toolbar/>
       </AppBar>
       <main className={classes.main}>
         <div className={classes.heroContent}>
