@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import Avatar from '@mui/material/Avatar';
-import headshot from '../images/headshot.jpg';
+import headshot from '../images/headshot.jpeg';
 import MotionW from '../images/motion-w.png';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import IconButton from '@mui/material/IconButton';
