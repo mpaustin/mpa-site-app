@@ -17,18 +17,6 @@ import Box from '@mui/material/Box';
 const styles = {
   appBar: {
     backgroundColor: '#808080',
-    padding: '6',
-    height: '10%',
-  },
-  heroContent: {
-    padding: '10% 0 10%',
-    fontFamily: 'EB Garamond,serif',
-  },
-  footer: {
-    backgroundColor: '#808080',
-    padding: '6',
-    height: '1.5rem',
-    margin: '25%',
   },
   headshot: {
     height: '40%',
@@ -43,19 +31,12 @@ const styles = {
     fontFamily: 'EB Garamond, serif',
   },
   motionW: {
-    height: '4',
-    width: '4',
     marginRight: '15px',
     cursor: 'pointer',
   },
-  main: {
-    backgroundColor: '#FFFFFF',
-    minHeight: 'calc(100vh - 1.5rem)',
-  },
   link: {
-      color: 'inherit',
       cursor: 'pointer',
-  }
+  },
 };
 
 const openUrl = (url) => {
@@ -81,61 +62,55 @@ export default function Album() {
       <AppBar position='relative' sx={{...styles.appBar, marginBottom: '10%'}} >
         <Toolbar/>
       </AppBar>
-      <main sx={styles.main}>
-        <div sx={styles.heroContent}>
-          <Container maxWidth='sm'>
-            <Avatar src={headshot} alt='headshot' sx={styles.headshot} />
-            <Typography component='h1' variant='h2' align='center' color='textPrimary' gutterBottom sx={styles.font}>
-              Matt Austin
-            </Typography>
-            <Box display='flex' flexDirection='row' justifyContent='center'>
-              <Link color='inherit' onClick={() => openUrl('https://www.engr.wisc.edu')}>
-                <Avatar src={MotionW} alt='motionW' variant='square' sx={styles.motionW} />
-              </Link>
+      <Container maxWidth='sm'>
+        <Avatar src={headshot} alt='headshot' sx={styles.headshot} />
+        <Typography component='h1' variant='h2' align='center' color='textPrimary' gutterBottom sx={styles.font}>
+          Matt Austin
+        </Typography>
+        <Box display='flex' flexDirection='row' justifyContent='center' marginBottom={'1rem'}>
+          <Link color='inherit' onClick={() => openUrl('https://www.engr.wisc.edu')}>
+            <Avatar src={MotionW} alt='motionW' variant='square' sx={styles.motionW} />
+          </Link>
+          <Typography variant='h6' align='center' color='textSecondary' paragraph sx={styles.font}>
+            Software Engineer 
+            {/* ||&nbsp; 
+            <Link sx={styles.link} onClick={() => openUrl('https://www.strava.com/athletes/22456556')}>Exercise Enthusiast</Link> ||&nbsp;
+            <Link sx={styles.link} onClick={() => openUrl('https://www.goodreads.com/review/list/70497021-matt?ref=nav_mybooks')}>Avid Reader</Link> */}
+          </Typography>
+        </Box>
+        <Grid container direction='row' justifyContent='center' alignItems='center' spacing='24'>
+          <Grid item>
+            <IconButton variant='contained' color='inherit' onClick={() => openUrl('https://www.linkedin.com/in/mattpaustin')}>
+              <LinkedInIcon />
+            </IconButton>
+          </Grid>
+          <Grid item>
+            <IconButton variant='outlined' color='inherit' onClick={() => openUrl('https://www.github.com/mpaustin')}>
+              <GitHubIcon />
+            </IconButton>
+          </Grid>
+          <Grid item>
+            <IconButton variant='contained' color='inherit' onClick={() => openUrl('https://www.instagram.com/matt.p.austin')}>
+              <InstagramIcon />
+            </IconButton>
+          </Grid>
+        </Grid>
+        {/* <div>
+          <Grid container spacing={2} justify='center'>
+            <Grid item>
               <Typography variant='h6' align='center' color='textSecondary' paragraph sx={styles.font}>
-                Software Engineer 
-                {/* ||&nbsp; 
-                <Link sx={styles.link} onClick={() => openUrl('https://www.strava.com/athletes/22456556')}>Exercise Enthusiast</Link> ||&nbsp;
-                <Link sx={styles.link} onClick={() => openUrl('https://www.goodreads.com/review/list/70497021-matt?ref=nav_mybooks')}>Avid Reader</Link> */}
+                <Link sx={styles.link} onClick={() => openUrl('http://trackyourworkouts.io')}>trackyourworkouts.io</Link>
               </Typography>
-            </Box>
-            <div>
-              <Grid container>
-                <Grid item xs={4}>
-                  <IconButton variant='contained' color='inherit' onClick={() => openUrl('https://www.linkedin.com/in/mattpaustin')}>
-                    <LinkedInIcon />
-                  </IconButton>
-                </Grid>
-                <Grid item xs={4}>
-                  <IconButton variant='outlined' color='inherit' onClick={() => openUrl('https://www.github.com/mpaustin')}>
-                    <GitHubIcon />
-                  </IconButton>
-                </Grid>
-                <Grid item xs={4}>
-                  <IconButton variant='contained' color='inherit' onClick={() => openUrl('https://www.instagram.com/matt.p.austin')}>
-                    <InstagramIcon />
-                  </IconButton>
-                </Grid>
-              </Grid>
-            </div>
-            {/* <div>
-              <Grid container spacing={2} justify='center'>
-                <Grid item>
-                  <Typography variant='h6' align='center' color='textSecondary' paragraph sx={styles.font}>
-                    <Link sx={styles.link} onClick={() => openUrl('http://trackyourworkouts.io')}>trackyourworkouts.io</Link>
-                  </Typography>
-                </Grid>
-                <div/>
-                <Grid item>
-                  <Typography variant='h6' align='center' color='textSecondary' paragraph sx={styles.font}>
-                    <Link sx={styles.link} onClick={() => openUrl('http://househackknack.com')}>househackknack.com</Link>
-                  </Typography>
-                </Grid>
-              </Grid>
-            </div> */}
-          </Container>
-        </div>
-      </main>
+            </Grid>
+            <div/>
+            <Grid item>
+              <Typography variant='h6' align='center' color='textSecondary' paragraph sx={styles.font}>
+                <Link sx={styles.link} onClick={() => openUrl('http://househackknack.com')}>househackknack.com</Link>
+              </Typography>
+            </Grid>
+          </Grid>
+        </div> */}
+      </Container>
       <AppBar position='relative' sx={{...styles.appBar, marginTop: '10%', padding: '2%'}} >
         <Copyright />
       </AppBar>
