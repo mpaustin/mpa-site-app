@@ -3,7 +3,7 @@ import Framework from './templates/Framework';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Framework />
     </div>
   );
