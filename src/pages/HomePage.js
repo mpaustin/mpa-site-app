@@ -11,6 +11,7 @@ import IconButton from '@mui/material/IconButton';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import Box from '@mui/material/Box';
+import siteUrls from '../config/siteUrls';
 
 const styles = {
   headshot: {
@@ -29,20 +30,17 @@ const styles = {
     marginRight: '15px',
     cursor: 'pointer',
   },
-  link: {
-      cursor: 'pointer',
-  },
 };
 
 const openUrl = (url) => {
-    window.open(url, '_blank');
-}
+  window.open(url, '_blank');
+};
 
 function Copyright() {
   return (
     <Typography variant='body2' color='textSecondary' align='center'>
       {'Copyright © '}
-      <Link color='inherit' href='https://mattpaustin.com/'>
+      <Link color='inherit' href={siteUrls.site}>
         mattpaustin.com
       </Link>{' '}
       {new Date().getFullYear()}
@@ -51,7 +49,7 @@ function Copyright() {
   );
 }
 
-export default function Framework() {
+export default function HomePage() {
   return (
     <Container maxWidth='sm' sx={{ display: 'flex', flexDirection: 'column', margin: 'auto' }}>
       <Avatar src={headshot} alt='headshot' sx={styles.headshot} />
@@ -59,48 +57,31 @@ export default function Framework() {
         Matt Austin
       </Typography>
       <Box display='flex' flexDirection='row' justifyContent='center' marginBottom={'1rem'}>
-        <Link color='inherit' onClick={() => openUrl('https://www.engr.wisc.edu')}>
+        <Link color='inherit' onClick={() => openUrl(siteUrls.uwEngineering)}>
           <Avatar src={MotionW} alt='motionW' variant='square' sx={styles.motionW} />
         </Link>
         <Typography variant='h6' align='center' color='textSecondary' paragraph sx={styles.font}>
-          Software Engineer 
-          {/* ||&nbsp; 
-          <Link sx={styles.link} onClick={() => openUrl('https://www.strava.com/athletes/22456556')}>Exercise Enthusiast</Link> ||&nbsp;
-          <Link sx={styles.link} onClick={() => openUrl('https://www.goodreads.com/review/list/70497021-matt?ref=nav_mybooks')}>Avid Reader</Link> */}
+          Software Engineer
         </Typography>
       </Box>
       <Grid container direction='row' justifyContent='center' alignItems='center' spacing='24'>
         <Grid item>
-          <IconButton variant='contained' color='inherit' onClick={() => openUrl('https://www.linkedin.com/in/mattpaustin')}>
+          <IconButton variant='contained' color='inherit' onClick={() => openUrl(siteUrls.linkedIn)}>
             <LinkedInIcon />
           </IconButton>
         </Grid>
         <Grid item>
-          <IconButton variant='outlined' color='inherit' onClick={() => openUrl('https://www.github.com/mpaustin')}>
+          <IconButton variant='outlined' color='inherit' onClick={() => openUrl(siteUrls.github)}>
             <GitHubIcon />
           </IconButton>
         </Grid>
         <Grid item>
-          <IconButton variant='contained' color='inherit' onClick={() => openUrl('https://www.instagram.com/matt.p.austin')}>
+          <IconButton variant='contained' color='inherit' onClick={() => openUrl(siteUrls.instagram)}>
             <InstagramIcon />
           </IconButton>
         </Grid>
       </Grid>
-      {/* <div>
-        <Grid container spacing={2} justify='center'>
-          <Grid item>
-            <Typography variant='h6' align='center' color='textSecondary' paragraph sx={styles.font}>
-              <Link sx={styles.link} onClick={() => openUrl('http://trackyourworkouts.io')}>trackyourworkouts.io</Link>
-            </Typography>
-          </Grid>
-          <div/>
-          <Grid item>
-            <Typography variant='h6' align='center' color='textSecondary' paragraph sx={styles.font}>
-              <Link sx={styles.link} onClick={() => openUrl('http://househackknack.com')}>househackknack.com</Link>
-            </Typography>
-          </Grid>
-        </Grid>
-      </div> */}
+      <Copyright />
     </Container>
   );
 }
