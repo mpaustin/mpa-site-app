@@ -1,4 +1,6 @@
 import React from 'react';
+import Box from '@mui/material/Box';
+import Drawer from '@mui/material/Drawer';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
@@ -10,7 +12,10 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import IconButton from '@mui/material/IconButton';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import Box from '@mui/material/Box';
+import List from '@mui/material/List';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
+import MenuIcon from '@mui/icons-material/Menu';
 import siteUrls from '../config/siteUrls';
 
 const styles = {
@@ -36,38 +41,65 @@ const openUrl = (url) => {
   window.open(url, '_blank');
 };
 
-export default function HomePage() {
+export default function HomePage({ navigate }) {
+  const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
+
+  const navigateToResume = () => {
+    setIsDrawerOpen(false);
+    navigate('/resume');
+  };
+
   return (
-    <Container maxWidth='sm' sx={{ display: 'flex', flexDirection: 'column', margin: 'auto' }}>
-      <Avatar src={headshot} alt='headshot' sx={styles.headshot} />
-      <Typography component='h1' variant='h2' align='center' color='textPrimary' gutterBottom sx={styles.font}>
-        Matt Austin
-      </Typography>
-      <Box display='flex' flexDirection='row' justifyContent='center' marginBottom={'1rem'}>
-        <Link color='inherit' onClick={() => openUrl(siteUrls.uwEngineering)}>
-          <Avatar src={MotionW} alt='motionW' variant='square' sx={styles.motionW} />
-        </Link>
-        <Typography variant='h6' align='center' color='textSecondary' paragraph sx={styles.font}>
-          Software Engineer
+    <>
+      <IconButton
+        aria-label='open navigation menu'
+        color='inherit'
+        onClick={() => setIsDrawerOpen(true)}
+        sx={{ position: 'fixed', top: 16, right: 16 }}
+      >
+        <MenuIcon />
+      </IconButton>
+      <Drawer anchor='right' open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)}>
+        <Box sx={{ width: 240 }} role='presentation'>
+          <List>
+            <ListItemButton onClick={navigateToResume}>
+              <ListItemText primary='Resume' />
+            </ListItemButton>
+          </List>
+        </Box>
+      </Drawer>
+
+      <Container maxWidth='sm' sx={{ display: 'flex', flexDirection: 'column', margin: 'auto' }}>
+        <Avatar src={headshot} alt='headshot' sx={styles.headshot} />
+        <Typography component='h1' variant='h2' align='center' color='textPrimary' gutterBottom sx={styles.font}>
+          Matt Austin
         </Typography>
-      </Box>
-      <Grid container direction='row' justifyContent='center' alignItems='center' spacing='24'>
-        <Grid item>
-          <IconButton variant='contained' color='inherit' onClick={() => openUrl(siteUrls.linkedIn)}>
-            <LinkedInIcon />
-          </IconButton>
+        <Box display='flex' flexDirection='row' justifyContent='center' marginBottom={'1rem'}>
+          <Link color='inherit' onClick={() => openUrl(siteUrls.uwEngineering)}>
+            <Avatar src={MotionW} alt='motionW' variant='square' sx={styles.motionW} />
+          </Link>
+          <Typography variant='h6' align='center' color='textSecondary' paragraph sx={styles.font}>
+            Software Engineer
+          </Typography>
+        </Box>
+        <Grid container direction='row' justifyContent='center' alignItems='center' spacing='24'>
+          <Grid item>
+            <IconButton variant='contained' color='inherit' onClick={() => openUrl(siteUrls.linkedIn)}>
+              <LinkedInIcon />
+            </IconButton>
+          </Grid>
+          <Grid item>
+            <IconButton variant='outlined' color='inherit' onClick={() => openUrl(siteUrls.github)}>
+              <GitHubIcon />
+            </IconButton>
+          </Grid>
+          <Grid item>
+            <IconButton variant='contained' color='inherit' onClick={() => openUrl(siteUrls.instagram)}>
+              <InstagramIcon />
+            </IconButton>
+          </Grid>
         </Grid>
-        <Grid item>
-          <IconButton variant='outlined' color='inherit' onClick={() => openUrl(siteUrls.github)}>
-            <GitHubIcon />
-          </IconButton>
-        </Grid>
-        <Grid item>
-          <IconButton variant='contained' color='inherit' onClick={() => openUrl(siteUrls.instagram)}>
-            <InstagramIcon />
-          </IconButton>
-        </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </>
   );
 }
