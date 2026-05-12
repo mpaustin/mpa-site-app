@@ -1,10 +1,10 @@
 import './App.css';
-import Framework from './templates/Framework';
+import HomePage from '../pages/HomePage';
 
 function App() {
   return (
     <div className='App'>
-      <Framework />
+      <HomePage />
     </div>
   );
 }
