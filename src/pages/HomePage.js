@@ -36,19 +36,6 @@ const openUrl = (url) => {
   window.open(url, '_blank');
 };
 
-function Copyright() {
-  return (
-    <Typography variant='body2' color='textSecondary' align='center'>
-      {'Copyright © '}
-      <Link color='inherit' href={siteUrls.site}>
-        mattpaustin.com
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
 export default function HomePage() {
   return (
     <Container maxWidth='sm' sx={{ display: 'flex', flexDirection: 'column', margin: 'auto' }}>
@@ -81,7 +68,6 @@ export default function HomePage() {
           </IconButton>
         </Grid>
       </Grid>
-      <Copyright />
     </Container>
   );
 }
