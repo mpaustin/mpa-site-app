@@ -1,0 +1,90 @@
+.birthday-page {
+  align-items: center;
+  background:
+    radial-gradient(ellipse 115% 24% at 50% 52%, rgba(92, 172, 201, 0.82) 0%, rgba(93, 171, 199, 0.56) 42%, transparent 72%),
+    linear-gradient(180deg, #f6a955 0%, #ffd87b 29%, #b9dce1 45%, #71b5ce 56%, #88b9c7 64%, #d8bc87 78%, #efd6a1 100%);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 2rem;
+  position: relative;
+}
+
+.birthday-card {
+  background: transparent;
+  max-width: 40rem;
+  padding: clamp(1rem, 4vw, 2.5rem);
+  position: relative;
+  text-align: center;
+  width: min(100%, 40rem);
+  z-index: 1;
+}
+
+.birthday-card h1 {
+  color: #5a3823;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.4rem, 7vw, 4.8rem);
+  font-weight: 500;
+  line-height: 1.04;
+  margin: 0 0 clamp(1.5rem, 4vw, 2.25rem);
+  text-shadow: 0 0.15rem 0.9rem rgba(255, 239, 183, 0.45);
+}
+
+.birthday-photo-frame {
+  aspect-ratio: 4 / 3;
+  background: #d7e6dc;
+  border-radius: 1.2rem;
+  box-shadow: 0 0.7rem 1.8rem rgba(57, 85, 92, 0.2);
+  overflow: hidden;
+}
+
+.birthday-photo {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.birthday-love-note {
+  color: #8a4821;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.55rem, 4vw, 2.25rem);
+  font-style: italic;
+  margin: 1.25rem 0 0;
+  text-shadow: 0 0.1rem 0.75rem rgba(255, 239, 183, 0.55);
+}
+
+.birthday-glow {
+  border-radius: 50%;
+  filter: blur(0.5rem);
+  opacity: 0.45;
+  position: absolute;
+}
+
+.birthday-glow--one {
+  background: #ffe07c;
+  height: 24rem;
+  right: -8rem;
+  top: -8rem;
+  width: 24rem;
+}
+
+.birthday-glow--two {
+  background: #e7bd74;
+  bottom: -10rem;
+  height: 21rem;
+  left: -8rem;
+  width: 21rem;
+}
+
+@media (max-width: 480px) {
+  .birthday-page {
+    padding: 1rem;
+  }
+
+  .birthday-card {
+    padding: 1.5rem 0.25rem;
+  }
+}
