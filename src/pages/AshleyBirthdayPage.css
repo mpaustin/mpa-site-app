@@ -25,13 +25,13 @@
 }
 
 .birthday-card h1 {
-  color: #5a3823;
+  color: #031f43;
   font-family: Manrope, sans-serif;
   font-size: clamp(2.25rem, 6vw, 4.4rem);
   font-weight: 800;
   line-height: 1.04;
   margin: 0 0 clamp(1.5rem, 4vw, 2.25rem);
-  text-shadow: 0 0.15rem 0.9rem rgba(255, 239, 183, 0.45);
+  text-shadow: 0 0.15rem 0.9rem rgba(255, 239, 183, 0.4);
 }
 
 .birthday-photo-frame {
@@ -50,12 +50,12 @@
 }
 
 .birthday-love-note {
-  color: #8a4821;
+  color: #031f43;
   font-family: 'DM Sans', sans-serif;
   font-size: clamp(1.4rem, 3.4vw, 2rem);
   font-weight: 700;
   margin: 1.25rem 0 0;
-  text-shadow: 0 0.1rem 0.75rem rgba(255, 239, 183, 0.55);
+  text-shadow: 0 0.1rem 0.75rem rgba(255, 239, 183, 0.45);
 }
 
 .birthday-glow {
